@@ -1,0 +1,74 @@
+group = "ru.udisondev.globus"
+
+subprojects {
+    apply plugin: 'java'
+
+    version '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        [
+                platform('org.springframework.boot:spring-boot-dependencies:3.0.0'),
+                'org.springframework.boot:spring-boot-configuration-processor',
+        ].each {
+            implementation it
+            testImplementation it
+            annotationProcessor it
+            testAnnotationProcessor it
+        }
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+        annotationProcessor 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+        compileOnly "org.mapstruct:mapstruct:1.5.3.Final"
+        annotationProcessor "org.mapstruct:mapstruct-processor:1.5.3.Final"
+
+        //web
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springdoc:springdoc-openapi-ui:1.6.13'
+        implementation 'io.swagger.core.v3:swagger-annotations:2.2.7'
+
+        // persistence
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        implementation 'org.flywaydb:flyway-core'
+        implementation 'org.postgresql:postgresql'
+
+        // cache
+        implementation 'org.springframework.boot:spring-boot-starter-cache'
+        implementation 'com.github.ben-manes.caffeine:caffeine'
+
+        // logging
+        implementation 'net.logstash.logback:logstash-logback-encoder:7.2'
+        implementation 'org.codehaus.groovy:groovy:3.0.13'
+
+        // aop
+        implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+        // validation
+        implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+        // misc
+        implementation 'org.springframework.boot:spring-boot-starter-actuator'
+        implementation 'org.apache.commons:commons-lang3'
+        implementation 'org.jetbrains:annotations:23.0.0'
+        implementation 'org.mapstruct:mapstruct:1.5.3.Final'
+        implementation 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+        implementation 'com.google.code.findbugs:jsr305:3.0.2'
+
+        // tests
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation 'org.testcontainers:postgresql:1.17.3'
+        testImplementation 'org.postgresql:postgresql'
+        testImplementation 'org.assertj:assertj-core'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
+
+

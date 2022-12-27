@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  ru.udisondev.globus.user.config.UserCacheConfig,\
+  ru.udisondev.globus.user.config.UserConfig

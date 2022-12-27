@@ -1,0 +1,14 @@
+plugins {
+    id 'java-library'
+}
+
+group 'ru.udisondev.globus'
+
+dependencies {
+    implementation project(':claim:claim-service')
+    implementation project(':persistence:enum')
+}
+
+test {
+    useJUnitPlatform()
+}

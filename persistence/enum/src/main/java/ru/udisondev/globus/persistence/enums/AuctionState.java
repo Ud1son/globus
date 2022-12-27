@@ -1,0 +1,6 @@
+package ru.udisondev.globus.persistence.enums;
+
+public enum AuctionState {
+
+    LOT_OPENED, LOT_CANCELLED, LOT_REJECTED, LOT_COMPLETED, BID_APPROVED, BID_CONFIRMED, BID_CANCELLED, BID_REQUESTED, BID_REJECTED, BID_CLOSED
+}

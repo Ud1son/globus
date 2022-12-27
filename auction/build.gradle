@@ -1,0 +1,13 @@
+plugins {
+    id 'java-library'
+}
+
+group 'ru.udisondev.globus'
+
+dependencies {
+    api project(':auction:auction-event')
+    implementation project(':auction:auction-publisher')
+    implementation project(':auction:bid')
+    implementation project(':auction:lot')
+    implementation project(':auction:listener')
+}

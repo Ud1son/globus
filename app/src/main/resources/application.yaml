@@ -1,0 +1,70 @@
+## web
+server:
+  port: 8080
+  servlet:
+    context-path: "/api"
+
+## metrics
+management:
+  server:
+    port: 9090
+  endpoints:
+    web.exposure.include: info, health, loggers
+
+## logging
+logging:
+  level:
+    root: ${ROOT_LOG_LEVEL:ERROR}
+    org.springframework: ${SPRING_LOG_LEVEL:ERROR}
+    one.seller: ${APP_LOG_LEVEL:DEBUG}
+
+spring:
+  flyway:
+    baseline-on-migrate: true
+  application:
+    name: globus
+
+  ## persistence
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    properties:
+      hibernate:
+        default_schema: ${POSTGRES_SCHEMA:public}
+        #        show_sql: true
+        temp:
+          use_jdbc_metadata_defaults: false
+    open-in-view: false
+  datasource:
+    url: ${POSTGRES_ADDRESS:jdbc:postgresql://localhost:5432}/${POSTGRES_DB_NAME:postgres}?currentSchema=${POSTGRES_SCHEMA:public}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+    driverClassName: org.postgresql.Driver
+    hikari:
+      maximumPoolSize: ${DB_MAX_POOL_SIZE:50}
+
+  ## cache
+  cache:
+    type: caffeine
+
+app:
+  client: REST
+  bid:
+    cache:
+      expireAfterAccessSec: 300
+      expireAfterWriteSec: 900
+      initCapacity: 10
+      maxSize: 1000
+  lot:
+    cache:
+      expireAfterAccessSec: 300
+      expireAfterWriteSec: 900
+      initCapacity: 10
+      maxSize: 1000
+  producer:
+    cache:
+      expireAfterAccessSec: 300
+      expireAfterWriteSec: 900
+      initCapacity: 10
+      maxSize: 1000

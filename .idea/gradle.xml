@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/auction" />
+            <option value="$PROJECT_DIR$/auction/auction-event" />
+            <option value="$PROJECT_DIR$/auction/auction-publisher" />
+            <option value="$PROJECT_DIR$/auction/bid" />
+            <option value="$PROJECT_DIR$/auction/bid/bid-api" />
+            <option value="$PROJECT_DIR$/auction/bid/bid-event" />
+            <option value="$PROJECT_DIR$/auction/bid/bid-publisher" />
+            <option value="$PROJECT_DIR$/auction/bid/bid-service" />
+            <option value="$PROJECT_DIR$/auction/bid/config" />
+            <option value="$PROJECT_DIR$/auction/bid/listener" />
+            <option value="$PROJECT_DIR$/auction/listener" />
+            <option value="$PROJECT_DIR$/auction/lot" />
+            <option value="$PROJECT_DIR$/auction/lot/config" />
+            <option value="$PROJECT_DIR$/auction/lot/listener" />
+            <option value="$PROJECT_DIR$/auction/lot/lot-event" />
+            <option value="$PROJECT_DIR$/auction/lot/lot-service" />
+            <option value="$PROJECT_DIR$/claim" />
+            <option value="$PROJECT_DIR$/claim/claim-api" />
+            <option value="$PROJECT_DIR$/claim/claim-event" />
+            <option value="$PROJECT_DIR$/claim/claim-publisher" />
+            <option value="$PROJECT_DIR$/claim/claim-service" />
+            <option value="$PROJECT_DIR$/claim/listener" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/communication" />
+            <option value="$PROJECT_DIR$/communication/listener" />
+            <option value="$PROJECT_DIR$/exception" />
+            <option value="$PROJECT_DIR$/persistence" />
+            <option value="$PROJECT_DIR$/persistence/bid" />
+            <option value="$PROJECT_DIR$/persistence/claim" />
+            <option value="$PROJECT_DIR$/persistence/customer" />
+            <option value="$PROJECT_DIR$/persistence/enum" />
+            <option value="$PROJECT_DIR$/persistence/lot" />
+            <option value="$PROJECT_DIR$/persistence/producer" />
+            <option value="$PROJECT_DIR$/persistence/user" />
+            <option value="$PROJECT_DIR$/producer" />
+            <option value="$PROJECT_DIR$/producer/config" />
+            <option value="$PROJECT_DIR$/producer/producer-api" />
+            <option value="$PROJECT_DIR$/producer/producer-service" />
+            <option value="$PROJECT_DIR$/user" />
+            <option value="$PROJECT_DIR$/user/config" />
+            <option value="$PROJECT_DIR$/user/user-api" />
+            <option value="$PROJECT_DIR$/user/user-service" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

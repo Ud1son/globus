@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library'
+}
+
+group 'ru.udisondev.globus'
+
+dependencies {
+    implementation project(":claim:claim-publisher")
+    implementation project(":persistence:claim")
+    implementation project(":exception")
+}
+
+test {
+    useJUnitPlatform()
+}

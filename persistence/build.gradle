@@ -1,0 +1,19 @@
+plugins {
+    id 'java-library'
+}
+
+group 'ru.udisondev.globus'
+
+dependencies {
+    api project(":persistence:bid")
+    api project(":persistence:claim")
+    api project(":persistence:customer")
+    api project(":persistence:enum")
+    api project(":persistence:lot")
+    api project(":persistence:producer")
+    api project(":persistence:user")
+}
+
+test {
+    useJUnitPlatform()
+}

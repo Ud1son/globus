@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library'
+}
+
+group 'ru.udisondev.globus'
+
+dependencies {
+    implementation project(":persistence:producer")
+    implementation project(":producer:config")
+    implementation project(":exception")
+}
+
+test {
+    useJUnitPlatform()
+}

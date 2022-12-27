@@ -1,0 +1,17 @@
+plugins {
+    id 'java-library'
+}
+
+group 'ru.udisondev.globus'
+
+dependencies {
+    implementation project(":claim:claim-service")
+    api project(":claim:claim-api")
+    api project(":claim:claim-event")
+    implementation project(":claim:listener")
+    implementation project(":claim:claim-publisher")
+}
+
+test {
+    useJUnitPlatform()
+}

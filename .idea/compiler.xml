@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/3.0.0/4da7b5a72f84132f9c458986f0b01a0bd3466e84/spring-boot-configuration-processor-3.0.0.jar" />
+        </processorPath>
+        <module name="globus.user.test" />
+        <module name="globus.auction.bid.config.test" />
+        <module name="globus.persistence.claim.test" />
+        <module name="globus.auction.lot.lot-event.test" />
+        <module name="globus.auction.bid.bid-publisher.test" />
+        <module name="globus.persistence.enum.test" />
+        <module name="globus.producer.config.test" />
+        <module name="globus.auction.lot.listener.test" />
+        <module name="globus.auction.bid.bid-event.test" />
+        <module name="globus.user.user-service.test" />
+        <module name="globus.claim.listener.test" />
+        <module name="globus.producer.test" />
+        <module name="globus.persistence.test" />
+        <module name="globus.auction.listener.test" />
+        <module name="globus.claim.claim-api.test" />
+        <module name="globus.common.test" />
+        <module name="globus.communication.test" />
+        <module name="globus.auction.lot.test" />
+        <module name="globus.exception.test" />
+        <module name="globus.auction.auction-event.test" />
+        <module name="globus.persistence.lot.test" />
+        <module name="globus.auction.test" />
+        <module name="globus.claim.claim-publisher.test" />
+        <module name="globus.producer.producer-service.test" />
+        <module name="globus.user.config.test" />
+        <module name="globus.persistence.user.test" />
+        <module name="globus.auction.lot.config.test" />
+        <module name="globus.claim.claim-event.test" />
+        <module name="globus.claim.test" />
+        <module name="globus.persistence.bid.test" />
+        <module name="globus.claim.claim-service.test" />
+        <module name="globus.user.user-api.test" />
+        <module name="globus.producer.producer-api.test" />
+        <module name="globus.auction.bid.bid-api.test" />
+        <module name="globus.auction.bid.test" />
+        <module name="globus.communication.listener.test" />
+        <module name="globus.auction.lot.lot-service.test" />
+        <module name="globus.app.test" />
+        <module name="globus.auction.bid.listener.test" />
+        <module name="globus.persistence.producer.test" />
+        <module name="globus.persistence.customer.test" />
+        <module name="globus.auction.auction-publisher.test" />
+        <module name="globus.auction.bid.bid-service.test" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/3.0.0/4da7b5a72f84132f9c458986f0b01a0bd3466e84/spring-boot-configuration-processor-3.0.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.24/13a394eed5c4f9efb2a6d956e2086f1d81e857d9/lombok-1.18.24.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok-mapstruct-binding/0.2.0/2f1cf9ced7b720ba4996c942b816669e63f0fa4f/lombok-mapstruct-binding-0.2.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.5.3.Final/dce418bedafd71ff8dd2cef15006c0fee788b073/mapstruct-processor-1.5.3.Final.jar" />
+        </processorPath>
+        <module name="globus.persistence.lot.main" />
+        <module name="globus.claim.claim-service.main" />
+        <module name="globus.claim.claim-publisher.main" />
+        <module name="globus.auction.bid.main" />
+        <module name="globus.claim.claim-event.main" />
+        <module name="globus.common.main" />
+        <module name="globus.auction.bid.bid-event.main" />
+        <module name="globus.auction.bid.bid-api.main" />
+        <module name="globus.persistence.main" />
+        <module name="globus.auction.auction-publisher.main" />
+        <module name="globus.persistence.producer.main" />
+        <module name="globus.auction.lot.lot-event.main" />
+        <module name="globus.producer.config.main" />
+        <module name="globus.auction.bid.bid-service.main" />
+        <module name="globus.user.main" />
+        <module name="globus.persistence.user.main" />
+        <module name="globus.auction.lot.lot-service.main" />
+        <module name="globus.persistence.customer.main" />
+        <module name="globus.app.main" />
+        <module name="globus.claim.listener.main" />
+        <module name="globus.auction.bid.listener.main" />
+        <module name="globus.communication.main" />
+        <module name="globus.claim.claim-api.main" />
+        <module name="globus.producer.main" />
+        <module name="globus.persistence.enum.main" />
+        <module name="globus.communication.listener.main" />
+        <module name="globus.auction.bid.bid-publisher.main" />
+        <module name="globus.producer.producer-api.main" />
+        <module name="globus.exception.main" />
+        <module name="globus.persistence.bid.main" />
+        <module name="globus.user.user-service.main" />
+        <module name="globus.producer.producer-service.main" />
+        <module name="globus.user.user-api.main" />
+        <module name="globus.auction.lot.listener.main" />
+        <module name="globus.user.config.main" />
+        <module name="globus.auction.listener.main" />
+        <module name="globus.auction.main" />
+        <module name="globus.persistence.claim.main" />
+        <module name="globus.auction.bid.config.main" />
+        <module name="globus.claim.main" />
+        <module name="globus.auction.auction-event.main" />
+        <module name="globus.auction.lot.config.main" />
+        <module name="globus.auction.lot.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="17" />
+  </component>
+</project>
