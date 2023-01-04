@@ -5,7 +5,7 @@ plugins {
 group 'ru.udisondev.globus'
 
 dependencies {
-    api project(":persistence:enum")
+    api project(":persistence:persistence-enum")
     implementation project(":user:user-service")
 }
 

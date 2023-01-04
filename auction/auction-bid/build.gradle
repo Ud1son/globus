@@ -1,0 +1,18 @@
+plugins {
+    id 'java-library'
+}
+
+group 'ru.udisondev.globus'
+
+dependencies {
+    api project(":auction:auction-bid:bid-api")
+    api project(":auction:auction-bid:bid-event")
+    implementation project(":auction:auction-bid:bid-publisher")
+    implementation project(":auction:auction-bid:bid-service")
+    implementation project(":auction:auction-bid:bid-config")
+    implementation project(":auction:auction-bid:bid-listener")
+}
+
+test {
+    useJUnitPlatform()
+}

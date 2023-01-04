@@ -3,11 +3,13 @@ package ru.udisondev.globus.claim.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.udisondev.globus.claim.publisher.ClaimEventPublisher;
+import ru.udisondev.globus.claim.service.model.ClaimDataProvider;
+import ru.udisondev.globus.claim.service.model.ClaimInfo;
 import ru.udisondev.globus.exception.ClaimNotFoundException;
 import ru.udisondev.globus.persistence.claim.Claim;
-import ru.udisondev.globus.persistence.claim.ClaimId;
 import ru.udisondev.globus.persistence.claim.ClaimRepository;
 
+import java.util.UUID;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
@@ -30,7 +32,7 @@ public class ApplicationClaimServiceImpl implements ClaimService {
     @Override
     @Transactional(rollbackFor = Throwable.class)
     public ClaimInfo create(ClaimDataProvider dataProvider) {
-        var savedClaim = repository.save(mapper.toEntity(dataProvider));
+        var savedClaim = repository.saveAndFlush(mapper.toEntity(dataProvider));
         eventPublisher.publish(mapper.toEvent(savedClaim));
 
         return mapper.toDto(savedClaim);
@@ -38,7 +40,7 @@ public class ApplicationClaimServiceImpl implements ClaimService {
 
     @Override
     @Transactional(rollbackFor = Throwable.class)
-    public void complete(String claimId) {
+    public void complete(UUID claimId) {
         updateClaimStateWithEventPublishing(
                 claimId,
                 claim -> claim.setState(COMPLETED),
@@ -47,15 +49,15 @@ public class ApplicationClaimServiceImpl implements ClaimService {
 
     @Override
     @Transactional(rollbackFor = Throwable.class)
-    public void cancel(String claimId) {
+    public void cancel(UUID claimId) {
         updateClaimStateWithEventPublishing(
                 claimId,
                 claim -> claim.setState(CANCELLED),
                 claim -> claim.getState() == NEW);
     }
 
-    private void updateClaimStateWithEventPublishing(String claimId, Consumer<Claim> updateFunc, Predicate<Claim> possibleResolver) {
-        var claim = repository.findByIdForUpdate(ClaimId.fromString(claimId)).orElseThrow(() -> ClaimNotFoundException.byId(claimId));
+    private void updateClaimStateWithEventPublishing(UUID claimId, Consumer<Claim> updateFunc, Predicate<Claim> possibleResolver) {
+        var claim = repository.findByIdForUpdate(claimId).orElseThrow(() -> ClaimNotFoundException.byId(claimId));
         if (!possibleResolver.test(claim)) {
             return;
         }

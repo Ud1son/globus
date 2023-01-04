@@ -15,8 +15,8 @@ management:
 logging:
   level:
     root: ${ROOT_LOG_LEVEL:ERROR}
-    org.springframework: ${SPRING_LOG_LEVEL:ERROR}
-    one.seller: ${APP_LOG_LEVEL:DEBUG}
+    org.springframework: ${SPRING_LOG_LEVEL:INFO}
+    ru.udisondev.globus: ${APP_LOG_LEVEL:DEBUG}
 
 spring:
   flyway:
@@ -27,7 +27,7 @@ spring:
   ## persistence
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: validate
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
     properties:
       hibernate:
@@ -63,6 +63,12 @@ app:
       initCapacity: 10
       maxSize: 1000
   producer:
+    cache:
+      expireAfterAccessSec: 300
+      expireAfterWriteSec: 900
+      initCapacity: 10
+      maxSize: 1000
+  user:
     cache:
       expireAfterAccessSec: 300
       expireAfterWriteSec: 900

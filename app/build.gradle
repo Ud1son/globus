@@ -6,7 +6,7 @@ group 'ru.udisondev.globus'
 dependencies {
     implementation project(":auction")
     implementation project(":claim")
-    implementation project(":common")
+    implementation project(":common:common-config")
     implementation project(":communication")
     implementation project(":exception")
     implementation project(":persistence")

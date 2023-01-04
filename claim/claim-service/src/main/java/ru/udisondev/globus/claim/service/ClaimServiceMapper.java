@@ -4,11 +4,12 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import ru.udisondev.globus.claim.event.ClaimEvent;
+import ru.udisondev.globus.claim.service.model.ClaimDataProvider;
+import ru.udisondev.globus.claim.service.model.ClaimInfo;
 import ru.udisondev.globus.persistence.claim.Claim;
-import ru.udisondev.globus.persistence.claim.ClaimId;
 import ru.udisondev.globus.persistence.enums.ClaimState;
 
-@Mapper(componentModel = "spring", imports = {ClaimState.class, ClaimId.class})
+@Mapper(componentModel = "spring", imports = ClaimState.class)
 public interface ClaimServiceMapper {
 
     @Mappings({
@@ -42,6 +43,6 @@ public interface ClaimServiceMapper {
     })
     ClaimEvent toEvent(Claim claim);
 
-    @Mapping(target = "id", expression = "java(claim.getId().toString())")
+    @Mapping(target = "order", source = "claimOrder")
     ClaimInfo toDto(Claim claim);
 }

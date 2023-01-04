@@ -8,7 +8,7 @@ dependencies {
     implementation project(":claim:claim-service")
     api project(":claim:claim-api")
     api project(":claim:claim-event")
-    implementation project(":claim:listener")
+    implementation project(":claim:claim-listener")
     implementation project(":claim:claim-publisher")
 }
 

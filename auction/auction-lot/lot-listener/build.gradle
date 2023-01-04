@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library'
+}
+
+group 'ru.udisondev.globus'
+
+dependencies {
+    implementation project(":claim:claim-event")
+    implementation project(":auction:auction-bid:bid-event")
+    implementation project(":auction:auction-lot:lot-service")
+}
+
+test {
+    useJUnitPlatform()
+}

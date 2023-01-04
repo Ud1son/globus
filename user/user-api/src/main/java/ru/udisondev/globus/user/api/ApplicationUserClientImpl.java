@@ -2,6 +2,8 @@ package ru.udisondev.globus.user.api;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.stereotype.Service;
+import ru.udisondev.globus.user.model.CreateUserRequest;
+import ru.udisondev.globus.user.model.UserDto;
 import ru.udisondev.globus.user.service.UserService;
 
 import java.util.UUID;

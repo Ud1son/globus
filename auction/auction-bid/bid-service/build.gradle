@@ -1,0 +1,16 @@
+plugins {
+    id 'java-library'
+}
+
+group 'ru.udisondev.globus'
+
+dependencies {
+    api project(":exception")
+    implementation project(":persistence:persistence-bid")
+    implementation project(":auction:auction-bid:bid-publisher")
+    implementation project(":auction:auction-bid:bid-config")
+}
+
+test {
+    useJUnitPlatform()
+}

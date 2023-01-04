@@ -5,8 +5,8 @@ plugins {
 group 'ru.udisondev.globus'
 
 dependencies {
-    implementation project(":persistence:producer")
-    implementation project(":producer:config")
+    implementation project(":persistence:persistence-producer")
+    implementation project(":producer:producer-config")
     implementation project(":exception")
 }
 

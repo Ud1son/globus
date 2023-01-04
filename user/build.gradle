@@ -5,7 +5,7 @@ plugins {
 group 'ru.udisondev.globus'
 
 dependencies {
-    implementation project(":user:config")
+    implementation project(":user:user-config")
     api project(":user:user-api")
     implementation project(":user:user-service")
 }

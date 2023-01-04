@@ -1,0 +1,16 @@
+plugins {
+    id 'java-library'
+}
+
+group 'ru.udisondev.globus'
+
+dependencies {
+    api project(":auction:auction-lot:lot-event")
+    implementation project(":persistence:persistence-lot")
+    implementation project(":exception")
+    implementation project(":auction:auction-lot:lot-config")
+}
+
+test {
+    useJUnitPlatform()
+}

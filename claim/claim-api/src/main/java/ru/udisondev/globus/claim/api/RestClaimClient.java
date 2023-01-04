@@ -2,7 +2,10 @@ package ru.udisondev.globus.claim.api;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.web.bind.annotation.*;
+import ru.udisondev.globus.claim.model.ClaimDto;
 import ru.udisondev.globus.claim.service.ClaimService;
+
+import java.util.UUID;
 
 @RestController
 @ConditionalOnProperty(prefix = "app", name = "client", havingValue = "REST")
@@ -25,7 +28,7 @@ public class RestClaimClient implements ClaimClient {
 
     @Override
     @PostMapping("/cancel/{claimId}")
-    public void cancel(@PathVariable("claimId") String claimId) {
+    public void cancel(@PathVariable("claimId") UUID claimId) {
         claimService.cancel(claimId);
     }
 }

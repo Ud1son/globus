@@ -5,8 +5,8 @@ plugins {
 group 'ru.udisondev.globus'
 
 dependencies {
-    api project(":user:config")
-    implementation project(":persistence:user")
+    api project(":user:user-config")
+    implementation project(":persistence:persistence-user")
     implementation project(":exception")
 }
 

@@ -6,7 +6,7 @@ group 'ru.udisondev.globus'
 
 dependencies {
     implementation project(':claim:claim-service')
-    implementation project(':persistence:enum')
+    implementation project(':persistence:persistence-enum')
 }
 
 test {

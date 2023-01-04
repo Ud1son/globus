@@ -5,7 +5,7 @@ plugins {
 group 'ru.udisondev.globus'
 
 dependencies {
-    implementation project(":communication:listener")
+    implementation project(":communication:communication-listener")
 }
 
 test {
