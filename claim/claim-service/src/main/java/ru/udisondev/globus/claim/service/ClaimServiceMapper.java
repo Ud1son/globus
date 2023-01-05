@@ -14,6 +14,7 @@ public interface ClaimServiceMapper {
 
     @Mappings({
             @Mapping(target = "id", ignore = true),
+            @Mapping(target = "claimOrder", ignore = true),
             @Mapping(target = "creationDateTime", ignore = true),
             @Mapping(target = "lastUpdateDateTime", ignore = true),
             @Mapping(target = "state", expression = "java(ClaimState.NEW)")
@@ -44,5 +45,6 @@ public interface ClaimServiceMapper {
     ClaimEvent toEvent(Claim claim);
 
     @Mapping(target = "order", source = "claimOrder")
+    @Mapping(target = "claimId", source = "id")
     ClaimInfo toDto(Claim claim);
 }

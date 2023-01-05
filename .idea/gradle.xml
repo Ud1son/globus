@@ -37,6 +37,10 @@
             <option value="$PROJECT_DIR$/common/common-config" />
             <option value="$PROJECT_DIR$/communication" />
             <option value="$PROJECT_DIR$/communication/communication-listener" />
+            <option value="$PROJECT_DIR$/customer" />
+            <option value="$PROJECT_DIR$/customer/customer-api" />
+            <option value="$PROJECT_DIR$/customer/customer-config" />
+            <option value="$PROJECT_DIR$/customer/customer-service" />
             <option value="$PROJECT_DIR$/exception" />
             <option value="$PROJECT_DIR$/persistence" />
             <option value="$PROJECT_DIR$/persistence/persistence-bid" />

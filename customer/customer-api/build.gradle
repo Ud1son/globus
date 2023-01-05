@@ -1,0 +1,13 @@
+plugins {
+    id 'java-library'
+}
+
+group 'ru.udisondev.globus'
+
+dependencies {
+    implementation project(":customer:customer-service")
+}
+
+test {
+    useJUnitPlatform()
+}

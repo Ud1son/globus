@@ -11,6 +11,7 @@
         <module name="globus.auction.auction-bid.bid-listener.test" />
         <module name="globus.auction.auction-bid.bid-publisher.test" />
         <module name="globus.auction.auction-bid.test" />
+        <module name="globus.customer.customer-service.test" />
         <module name="globus.auction.auction-listener.test" />
         <module name="globus.user.user-service.test" />
         <module name="globus.auction.auction-lot.lot-listener.test" />
@@ -37,10 +38,13 @@
         <module name="globus.claim.claim-service.test" />
         <module name="globus.user.user-api.test" />
         <module name="globus.producer.producer-api.test" />
+        <module name="globus.customer.test" />
         <module name="globus.persistence.persistence-enum.test" />
         <module name="globus.auction.auction-lot.test" />
+        <module name="globus.customer.customer-config.test" />
         <module name="globus.communication.communication-listener.test" />
         <module name="globus.auction.auction-lot.lot-service.test" />
+        <module name="globus.customer.customer-api.test" />
         <module name="globus.app.test" />
         <module name="globus.persistence.persistence-user.test" />
         <module name="globus.persistence.persistence-lot.test" />
@@ -71,6 +75,7 @@
         <module name="globus.persistence.persistence-producer.main" />
         <module name="globus.auction.auction-bid.bid-event.main" />
         <module name="globus.persistence.persistence-enum.main" />
+        <module name="globus.customer.main" />
         <module name="globus.persistence.persistence-lot.main" />
         <module name="globus.persistence.main" />
         <module name="globus.claim.claim-listener.main" />
@@ -79,6 +84,7 @@
         <module name="globus.persistence.persistence-user.main" />
         <module name="globus.communication.communication-listener.main" />
         <module name="globus.auction.auction-lot.lot-service.main" />
+        <module name="globus.customer.customer-config.main" />
         <module name="globus.common.common-config.main" />
         <module name="globus.producer.producer-config.main" />
         <module name="globus.user.main" />
@@ -95,6 +101,8 @@
         <module name="globus.persistence.persistence-customer.main" />
         <module name="globus.producer.producer-api.main" />
         <module name="globus.exception.main" />
+        <module name="globus.customer.customer-service.main" />
+        <module name="globus.customer.customer-api.main" />
         <module name="globus.user.user-service.main" />
         <module name="globus.producer.producer-service.main" />
         <module name="globus.user.user-api.main" />

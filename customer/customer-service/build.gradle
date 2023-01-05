@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library'
+}
+
+group 'ru.udisondev.globus'
+
+dependencies {
+    implementation project(":persistence:persistence-customer")
+    implementation project(":customer:customer-config")
+    implementation project(":exception")
+}
+
+test {
+    useJUnitPlatform()
+}
