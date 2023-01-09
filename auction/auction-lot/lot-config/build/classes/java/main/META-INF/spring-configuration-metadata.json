@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "app.lot",
+      "type": "ru.udisondev.globus.auction.lot.config.LotProperties",
+      "sourceType": "ru.udisondev.globus.auction.lot.config.LotProperties"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

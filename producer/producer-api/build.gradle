@@ -6,6 +6,8 @@ group 'ru.udisondev.globus'
 
 dependencies {
     implementation project(":producer:producer-service")
+    implementation project(":organization:organization-api")
+    api project(":user:user-api")
 }
 
 test {

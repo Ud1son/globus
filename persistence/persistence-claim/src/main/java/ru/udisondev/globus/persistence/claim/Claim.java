@@ -27,8 +27,10 @@ public class Claim {
     @UuidGenerator
     private UUID id;
 
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(nullable = false, unique = true, updatable = false)
+    @Column(columnDefinition = "serial",
+            insertable = false,
+            updatable = false,
+            unique = true)
     private Long claimOrder;
 
     @Column(nullable = false, updatable = false)
@@ -49,6 +51,7 @@ public class Claim {
     private Billing billing;
 
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private ClaimState state;
 
     @CreationTimestamp

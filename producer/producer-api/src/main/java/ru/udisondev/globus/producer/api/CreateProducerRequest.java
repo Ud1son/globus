@@ -1,7 +1,11 @@
 package ru.udisondev.globus.producer.api;
 
-import ru.udisondev.globus.producer.service.ProducerDataProvider;
+import lombok.Data;
+import ru.udisondev.globus.user.model.CreateUserRequest;
 
-public interface CreateProducerRequest extends ProducerDataProvider {
+@Data
+public class CreateProducerRequest {
 
+    private CreateUserRequest userData;
+    private String organizationInn;
 }

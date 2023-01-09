@@ -1,7 +1,12 @@
 package ru.udisondev.globus.customer.api;
 
-import ru.udisondev.globus.customer.service.CustomerDataProvider;
+import lombok.Data;
+import ru.udisondev.globus.user.model.CreateUserRequest;
 
-public interface CreateCustomerRequest extends CustomerDataProvider {
+@Data
+public class CreateCustomerRequest {
+
+    private CreateUserRequest userData;
+    private String organizationInn;
 
 }

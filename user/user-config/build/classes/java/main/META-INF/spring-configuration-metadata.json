@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "app.user",
+      "type": "ru.udisondev.globus.user.config.UserProperties",
+      "sourceType": "ru.udisondev.globus.user.config.UserProperties"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

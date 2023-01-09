@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "app.producer",
+      "type": "ru.udisondev.globus.producer.config.ProducerProperties",
+      "sourceType": "ru.udisondev.globus.producer.config.ProducerProperties"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

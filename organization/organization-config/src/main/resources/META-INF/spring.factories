@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    ru.udisondev.globus.organization.config.OrganizationCacheConfig,\
+    ru.udisondev.globus.organization.config.OrganizationConfig

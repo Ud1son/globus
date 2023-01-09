@@ -12,8 +12,8 @@ import org.springframework.boot.context.properties.bind.ConstructorBinding;
 @RequiredArgsConstructor(onConstructor_ = @ConstructorBinding)
 public class CustomerProperties {
 
-    public static final String CACHE_NAME = "producerCache";
-    public static final String CACHE_MANAGER_NAME = "producerCacheManager";
+    public static final String CACHE_NAME = "customerCache";
+    public static final String CACHE_MANAGER_NAME = "customerCacheManager";
     @NotNull
     private final Cache cache;
 }

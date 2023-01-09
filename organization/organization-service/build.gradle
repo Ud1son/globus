@@ -1,0 +1,22 @@
+plugins {
+    id 'java-library'
+}
+
+group 'ru.udisondev.globus'
+version 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(":persistence:persistence-organization")
+    implementation project(":exception")
+    implementation project(":organization:organization-config")
+    implementation 'com.github.kuliginstepan:dadata-client:3.1.0'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+}
+
+test {
+    useJUnitPlatform()
+}

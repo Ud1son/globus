@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "app.bid",
+      "type": "ru.udisondev.globus.auction.bid.config.BidProperties",
+      "sourceType": "ru.udisondev.globus.auction.bid.config.BidProperties"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
