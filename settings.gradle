@@ -94,4 +94,7 @@ include 'organization:organization-config'
 findProject(':organization:organization-config')?.name = 'organization-config'
 include 'persistence:persistence-organization'
 findProject(':persistence:persistence-organization')?.name = 'persistence-organization'
+include 'telegram'
+include 'telegram:telegram-service'
+findProject(':telegram:telegram-service')?.name = 'telegram-service'
 

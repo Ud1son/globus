@@ -1,5 +1,6 @@
 package ru.udisondev.globus.communication.listener;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 import ru.udisondev.globus.auction.event.PrivateAuctionEvent;
@@ -12,7 +13,7 @@ public class AuctionEventListener {
     private final UserClient userClient;
     private final ProducerClient producerClient;
 
-    public AuctionEventListener(UserClient userClient, ProducerClient producerClient) {
+    public AuctionEventListener(UserClient userClient, @Qualifier("applicationProducerClient") ProducerClient producerClient) {
         this.userClient = userClient;
         this.producerClient = producerClient;
     }

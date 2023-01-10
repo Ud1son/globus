@@ -1,8 +1,8 @@
 package ru.udisondev.globus.producer.api;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ru.udisondev.globus.organization.api.OrganizationClient;
-import ru.udisondev.globus.producer.service.ProducerDataProvider;
 import ru.udisondev.globus.producer.service.ProducerDataProvider.DefaultProducerDataProvider;
 import ru.udisondev.globus.producer.service.ProducerService;
 import ru.udisondev.globus.user.api.UserClient;
@@ -12,6 +12,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
+@Qualifier("applicationProducerClient")
 public class ApplicationProducerClient implements ProducerClient {
 
     private final ProducerService producerService;

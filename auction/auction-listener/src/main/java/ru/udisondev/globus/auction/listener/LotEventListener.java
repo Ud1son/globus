@@ -1,5 +1,6 @@
 package ru.udisondev.globus.auction.listener;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 import ru.udisondev.globus.auction.event.PrivateAuctionEvent;
@@ -16,7 +17,7 @@ public class LotEventListener {
     private final AuctionEventPublisher auctionEventPublisher;
     private final AuctionLotMapper mapper;
 
-    public LotEventListener(ProducerClient producerClient, AuctionEventPublisher auctionEventPublisher, AuctionLotMapper mapper) {
+    public LotEventListener(@Qualifier("applicationProducerClient") ProducerClient producerClient, AuctionEventPublisher auctionEventPublisher, AuctionLotMapper mapper) {
         this.producerClient = producerClient;
         this.auctionEventPublisher = auctionEventPublisher;
         this.mapper = mapper;

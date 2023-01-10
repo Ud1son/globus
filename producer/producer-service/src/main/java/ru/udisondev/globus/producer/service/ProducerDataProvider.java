@@ -1,7 +1,6 @@
 package ru.udisondev.globus.producer.service;
 
 import lombok.Builder;
-import lombok.Data;
 import lombok.Value;
 
 import java.util.UUID;

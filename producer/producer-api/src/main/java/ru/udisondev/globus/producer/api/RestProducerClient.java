@@ -1,8 +1,6 @@
 package ru.udisondev.globus.producer.api;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import ru.udisondev.globus.organization.api.OrganizationClient;
 import ru.udisondev.globus.producer.service.ProducerDataProvider;
@@ -15,7 +13,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/producer")
-@ConditionalOnProperty(prefix = "app", name = "client", havingValue = "REST")
+@Qualifier("restProducerClient")
 public class RestProducerClient implements ProducerClient {
 
     private final ProducerService producerService;

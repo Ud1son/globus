@@ -10,6 +10,8 @@ dependencies {
     implementation project(":communication")
     implementation project(":exception")
     implementation project(":persistence")
+    implementation project(":organization")
+    implementation project(":customer")
     implementation project(":producer")
     implementation project(":user")
 }

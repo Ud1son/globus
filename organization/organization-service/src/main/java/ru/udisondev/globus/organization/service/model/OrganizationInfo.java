@@ -13,7 +13,6 @@ public class OrganizationInfo {
 
     @Nullable
     UUID id;
-
     String inn;
     String kpp;
     String fullName;

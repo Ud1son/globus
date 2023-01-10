@@ -59,6 +59,8 @@
             <option value="$PROJECT_DIR$/producer/producer-api" />
             <option value="$PROJECT_DIR$/producer/producer-config" />
             <option value="$PROJECT_DIR$/producer/producer-service" />
+            <option value="$PROJECT_DIR$/telegram" />
+            <option value="$PROJECT_DIR$/telegram/telegram-service" />
             <option value="$PROJECT_DIR$/user" />
             <option value="$PROJECT_DIR$/user/user-api" />
             <option value="$PROJECT_DIR$/user/user-config" />

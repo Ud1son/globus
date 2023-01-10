@@ -10,6 +10,7 @@
         <module name="globus.auction.auction-bid.bid-listener.test" />
         <module name="globus.auction.auction-bid.bid-publisher.test" />
         <module name="globus.customer.customer-service.test" />
+        <module name="globus.telegram.test" />
         <module name="globus.persistence.persistence-organization.test" />
         <module name="globus.user.user-service.test" />
         <module name="globus.auction.auction-lot.lot-listener.test" />
@@ -49,6 +50,7 @@
         <module name="globus.auction.auction-lot.test" />
         <module name="globus.customer.customer-config.test" />
         <module name="globus.communication.communication-listener.test" />
+        <module name="globus.telegram.telegram-service.test" />
         <module name="globus.auction.auction-lot.lot-service.test" />
         <module name="globus.customer.customer-api.test" />
         <module name="globus.app.test" />
@@ -69,6 +71,7 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok-mapstruct-binding/0.2.0/2f1cf9ced7b720ba4996c942b816669e63f0fa4f/lombok-mapstruct-binding-0.2.0.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.5.3.Final/dce418bedafd71ff8dd2cef15006c0fee788b073/mapstruct-processor-1.5.3.Final.jar" />
         </processorPath>
+        <module name="globus.telegram.telegram-service.main" />
         <module name="globus.auction.auction-bid.bid-config.main" />
         <module name="globus.claim.claim-service.main" />
         <module name="globus.claim.claim-publisher.main" />
@@ -85,6 +88,7 @@
         <module name="globus.communication.communication-listener.main" />
         <module name="globus.common.common-config.main" />
         <module name="globus.user.main" />
+        <module name="globus.telegram.main" />
         <module name="globus.persistence.persistence-claim.main" />
         <module name="globus.communication.main" />
         <module name="globus.claim.claim-api.main" />
