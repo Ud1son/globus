@@ -14,4 +14,5 @@ dependencies {
     implementation project(":customer")
     implementation project(":producer")
     implementation project(":user")
+    implementation project(":telegram")
 }
