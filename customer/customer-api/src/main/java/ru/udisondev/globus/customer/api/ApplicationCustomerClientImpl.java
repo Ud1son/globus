@@ -4,7 +4,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.stereotype.Service;
 import ru.udisondev.globus.customer.service.CustomerDataProvider.DefaultCustomerDataProvider;
 import ru.udisondev.globus.customer.service.CustomerService;
-import ru.udisondev.globus.organization.api.OrganizationClient;
 import ru.udisondev.globus.user.api.UserClient;
 
 import java.util.List;
