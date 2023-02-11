@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  ru.udisondev.globus.auction.lot.config.LotConfig, \
-  ru.udisondev.globus.auction.lot.config.LotCacheConfig

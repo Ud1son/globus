@@ -14,7 +14,7 @@
 *.iws
 
 # Gradle
-build/
+*/build/
 .gradle/
 
 # Maven

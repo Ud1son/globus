@@ -23,8 +23,8 @@ public interface ClaimServiceMapper {
 
     @Mappings({
             @Mapping(target = "claimId", expression = "java(claim.getId().toString())"),
-            @Mapping(target = "deliveryFrom", source = "delivery.deliveryFrom"),
-            @Mapping(target = "deliveryTo", source = "delivery.deliveryTo"),
+            @Mapping(target = "deliveryDate", source = "delivery.deliveryDate"),
+            @Mapping(target = "arriveDate", source = "delivery.arriveDate"),
             @Mapping(target = "deliveryAddress", source = "delivery.deliveryAddress"),
             @Mapping(target = "arriveAddress", source = "delivery.arriveAddress"),
             @Mapping(target = "title", source = "cargo.title"),

@@ -12,6 +12,7 @@ import org.hibernate.annotations.UuidGenerator;
 import ru.udisondev.globus.persistence.enums.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -41,10 +42,10 @@ public class Lot {
     private UUID confirmedBidId;
 
     @Column(nullable = false)
-    private OffsetDateTime deliveryFrom;
+    private LocalDate deliveryDate;
 
     @Column(nullable = false)
-    private OffsetDateTime deliveryTo;
+    private LocalDate arriveDate;
 
     @Column(nullable = false)
     private String deliveryAddress;

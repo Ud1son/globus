@@ -6,6 +6,7 @@ import ru.udisondev.globus.auction.lot.service.model.LotDataProvider;
 import ru.udisondev.globus.persistence.enums.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -15,8 +16,8 @@ public class LotInfo implements LotDataProvider {
 
     String claimId;
     UUID customerId;
-    OffsetDateTime deliveryFrom;
-    OffsetDateTime deliveryTo;
+    LocalDate deliveryDate;
+    LocalDate arriveDate;
     String deliveryAddress;
     String arriveAddress;
     String title;
