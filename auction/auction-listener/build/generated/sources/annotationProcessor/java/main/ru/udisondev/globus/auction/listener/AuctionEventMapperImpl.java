@@ -12,7 +12,7 @@ import ru.udisondev.globus.persistence.enums.AuctionState;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-01-09T22:15:34+0400",
+    date = "2023-02-11T20:12:57+0400",
     comments = "version: 1.5.3.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.4.2.jar, environment: Java 17.0.3 (Eclipse Adoptium)"
 )
 @Component

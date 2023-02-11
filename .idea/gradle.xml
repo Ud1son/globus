@@ -42,17 +42,12 @@
             <option value="$PROJECT_DIR$/customer/customer-config" />
             <option value="$PROJECT_DIR$/customer/customer-service" />
             <option value="$PROJECT_DIR$/exception" />
-            <option value="$PROJECT_DIR$/organization" />
-            <option value="$PROJECT_DIR$/organization/organization-api" />
-            <option value="$PROJECT_DIR$/organization/organization-config" />
-            <option value="$PROJECT_DIR$/organization/organization-service" />
             <option value="$PROJECT_DIR$/persistence" />
             <option value="$PROJECT_DIR$/persistence/persistence-bid" />
             <option value="$PROJECT_DIR$/persistence/persistence-claim" />
             <option value="$PROJECT_DIR$/persistence/persistence-customer" />
             <option value="$PROJECT_DIR$/persistence/persistence-enum" />
             <option value="$PROJECT_DIR$/persistence/persistence-lot" />
-            <option value="$PROJECT_DIR$/persistence/persistence-organization" />
             <option value="$PROJECT_DIR$/persistence/persistence-producer" />
             <option value="$PROJECT_DIR$/persistence/persistence-user" />
             <option value="$PROJECT_DIR$/producer" />

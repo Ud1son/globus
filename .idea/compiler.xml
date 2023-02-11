@@ -11,7 +11,6 @@
         <module name="globus.auction.auction-bid.bid-publisher.test" />
         <module name="globus.customer.customer-service.test" />
         <module name="globus.telegram.test" />
-        <module name="globus.persistence.persistence-organization.test" />
         <module name="globus.user.user-service.test" />
         <module name="globus.auction.auction-lot.lot-listener.test" />
         <module name="globus.producer.test" />
@@ -27,7 +26,6 @@
         <module name="globus.claim.test" />
         <module name="globus.user.user-config.test" />
         <module name="globus.auction.auction-lot.lot-config.test" />
-        <module name="globus.organization.organization-config.test" />
         <module name="globus.user.user-api.test" />
         <module name="globus.producer.producer-api.test" />
         <module name="globus.customer.test" />
@@ -36,10 +34,7 @@
         <module name="globus.user.test" />
         <module name="globus.auction.auction-bid.test" />
         <module name="globus.auction.auction-listener.test" />
-        <module name="globus.organization.test" />
         <module name="globus.claim.claim-api.test" />
-        <module name="globus.organization.organization-api.test" />
-        <module name="globus.organization.organization-service.test" />
         <module name="globus.auction.test" />
         <module name="globus.claim.claim-publisher.test" />
         <module name="globus.auction.auction-bid.bid-event.test" />
@@ -78,7 +73,6 @@
         <module name="globus.auction.auction-lot.lot-config.main" />
         <module name="globus.claim.claim-event.main" />
         <module name="globus.auction.auction-bid.bid-event.main" />
-        <module name="globus.organization.organization-api.main" />
         <module name="globus.persistence.persistence-enum.main" />
         <module name="globus.customer.main" />
         <module name="globus.persistence.persistence-lot.main" />
@@ -96,15 +90,12 @@
         <module name="globus.persistence.persistence-customer.main" />
         <module name="globus.customer.customer-service.main" />
         <module name="globus.customer.customer-api.main" />
-        <module name="globus.organization.organization-config.main" />
         <module name="globus.producer.producer-service.main" />
         <module name="globus.user.user-config.main" />
-        <module name="globus.persistence.persistence-organization.main" />
         <module name="globus.auction.auction-lot.main" />
         <module name="globus.auction.auction-bid.bid-publisher.main" />
         <module name="globus.auction.main" />
         <module name="globus.auction.auction-event.main" />
-        <module name="globus.organization.organization-service.main" />
         <module name="globus.auction.auction-lot.lot-event.main" />
         <module name="globus.persistence.persistence-bid.main" />
         <module name="globus.common.main" />
@@ -118,7 +109,6 @@
         <module name="globus.auction.auction-bid.bid-listener.main" />
         <module name="globus.app.main" />
         <module name="globus.auction.auction-bid.bid-api.main" />
-        <module name="globus.organization.main" />
         <module name="globus.auction.auction-lot.lot-listener.main" />
         <module name="globus.auction.auction-bid.main" />
         <module name="globus.producer.producer-api.main" />

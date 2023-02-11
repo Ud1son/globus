@@ -17,17 +17,14 @@ public class ApplicationCustomerClientImpl implements CustomerClient {
 
     private final CustomerService customerService;
     private final CustomerApiMapper mapper;
-    private final OrganizationClient organizationClient;
     private final UserClient userClient;
 
 
     public ApplicationCustomerClientImpl(CustomerService customerService,
                                          CustomerApiMapper mapper,
-                                         OrganizationClient organizationClient,
                                          UserClient userClient) {
         this.customerService = customerService;
         this.mapper = mapper;
-        this.organizationClient = organizationClient;
         this.userClient = userClient;
     }
 
@@ -36,7 +33,6 @@ public class ApplicationCustomerClientImpl implements CustomerClient {
         return mapper.toDto(
                 customerService.create(
                         DefaultCustomerDataProvider.builder()
-                                .organizationId(organizationClient.addOrganization(request.getOrganizationInn()).getId())
                                 .userId(userClient.create(request.getUserData()).getId())
                                 .build()
                 )

@@ -7,7 +7,6 @@ group 'ru.udisondev.globus'
 dependencies {
     implementation project(":customer:customer-service")
     implementation project(":user:user-api")
-    implementation project(":organization:organization-api")
 }
 
 test {
