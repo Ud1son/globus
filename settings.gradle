@@ -88,4 +88,6 @@ findProject(':customer:customer-config')?.name = 'customer-config'
 include 'telegram'
 include 'telegram:telegram-service'
 findProject(':telegram:telegram-service')?.name = 'telegram-service'
+include 'persistence:persistence-telegram-user'
+findProject(':persistence:persistence-telegram-user')?.name = 'persistence-telegram-user'
 

@@ -80,11 +80,9 @@ public class Lot {
     @Enumerated(EnumType.STRING)
     private VehicleSubType vehicleSubType;
 
-    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private PlacingType deliveryPlacingType;
 
-    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private PlacingType arrivePlacingType;
 

@@ -14,14 +14,14 @@ import static java.util.Optional.of;
 import static ru.udisondev.globus.telegram.Command.CREATE_CLAIM;
 import static ru.udisondev.globus.telegram.Command.defineCommand;
 
-public class GlobusBot extends TelegramLongPollingBot {
+public class GlobusProducerBot extends TelegramLongPollingBot {
 
     private final String token;
     private final CommandMapper mapper;
     private final ApplicationEventPublisher eventPublisher;
 
 
-    public GlobusBot(String token, CommandMapper mapper, ApplicationEventPublisher eventPublisher) {
+    public GlobusProducerBot(String token, CommandMapper mapper, ApplicationEventPublisher eventPublisher) {
         this.token = token;
         this.mapper = mapper;
         this.eventPublisher = eventPublisher;
@@ -43,7 +43,7 @@ public class GlobusBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "globusdelivery_bot";
+        return "globusdelivery_prod_bot";
     }
 
     private void handleMessage(Message m) {
@@ -53,14 +53,7 @@ public class GlobusBot extends TelegramLongPollingBot {
     }
 
         public SetMyCommands getCommands () {
-            return new SetMyCommands(
-                    List.of(
-                            BotCommand.builder()
-                                    .command(CREATE_CLAIM.getValue())
-                                    .description(CREATE_CLAIM.getDescription())
-                                    .build()),
-                    BotCommandScopeDefault.builder().build(),
-                    "ru");
+            return null;
         }
     }
 
