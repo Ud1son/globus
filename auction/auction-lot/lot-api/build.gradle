@@ -1,0 +1,19 @@
+plugins {
+    id 'java-library'
+}
+
+group 'ru.udisondev.globus'
+version 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api project(':persistence:persistence-enum')
+    implementation project(':auction:auction-lot:lot-service')
+}
+
+test {
+    useJUnitPlatform()
+}

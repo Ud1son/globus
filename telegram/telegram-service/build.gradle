@@ -14,6 +14,8 @@ dependencies {
     implementation project(':persistence:persistence-telegram-user')
     implementation project(':auction:auction-bid:bid-api')
     implementation project(':auction:auction-event')
+    implementation project(':common:util')
+    implementation project(':exception')
 }
 
 test {

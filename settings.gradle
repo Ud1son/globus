@@ -90,4 +90,8 @@ include 'telegram:telegram-service'
 findProject(':telegram:telegram-service')?.name = 'telegram-service'
 include 'persistence:persistence-telegram-user'
 findProject(':persistence:persistence-telegram-user')?.name = 'persistence-telegram-user'
+include 'common:util'
+findProject(':common:util')?.name = 'util'
+include 'auction:auction-lot:lot-api'
+findProject(':auction:auction-lot:lot-api')?.name = 'lot-api'
 
