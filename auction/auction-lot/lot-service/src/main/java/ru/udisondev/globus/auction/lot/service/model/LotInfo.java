@@ -3,9 +3,11 @@ package ru.udisondev.globus.auction.lot.service.model;
 
 import lombok.Builder;
 import lombok.Value;
+import org.springframework.cglib.core.Local;
 import ru.udisondev.globus.persistence.enums.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -19,8 +21,8 @@ public class LotInfo {
     String claimId;
     UUID customerId;
     UUID confirmedBidId;
-    OffsetDateTime deliveryFrom;
-    OffsetDateTime deliveryTo;
+    LocalDate deliveryDate;
+    LocalDate arriveDate;
     String deliveryAddress;
     String arriveAddress;
     String title;

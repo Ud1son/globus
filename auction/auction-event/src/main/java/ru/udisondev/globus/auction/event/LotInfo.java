@@ -5,6 +5,7 @@ import lombok.Value;
 import ru.udisondev.globus.persistence.enums.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -16,8 +17,8 @@ public class LotInfo {
     LotState state;
     String claimId;
     UUID customerId;
-    OffsetDateTime deliveryFrom;
-    OffsetDateTime deliveryTo;
+    LocalDate deliveryDate;
+    LocalDate arriveDate;
     String deliveryAddress;
     String arriveAddress;
     String title;

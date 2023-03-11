@@ -5,7 +5,7 @@ import ru.udisondev.globus.claim.service.model.*;
 import ru.udisondev.globus.persistence.enums.*;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Data
@@ -31,8 +31,8 @@ public class CreateClaimRequest implements ClaimDataProvider {
 
     @Data
     public static class DeliveryInfo implements DeliveryDataProvider {
-        private OffsetDateTime deliveryFrom;
-        private OffsetDateTime deliveryTo;
+        private LocalDate deliveryDate;
+        private LocalDate arriveDate;
         private String deliveryAddress;
         private String arriveAddress;
     }

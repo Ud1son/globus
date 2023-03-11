@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 
 @Data
@@ -11,10 +12,10 @@ import java.time.OffsetDateTime;
 public class Delivery {
 
     @Column(nullable = false)
-    private OffsetDateTime deliveryFrom;
+    private LocalDate deliveryDate;
 
     @Column(nullable = false)
-    private OffsetDateTime deliveryTo;
+    private LocalDate arriveDate;
 
     @Column(nullable = false)
     private String deliveryAddress;

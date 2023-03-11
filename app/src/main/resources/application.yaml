@@ -4,10 +4,6 @@ server:
   servlet:
     context-path: "/api"
 
-dadata:
-  client:
-    token: ${DADATA_TOKEN:token}
-
 ## metrics
 management:
   server:
@@ -19,7 +15,7 @@ management:
 logging:
   level:
     root: ${ROOT_LOG_LEVEL:ERROR}
-    org.springframework: ${SPRING_LOG_LEVEL:DEBUG}
+    org.springframework: ${SPRING_LOG_LEVEL:ERROR}
     ru.udisondev.globus: ${APP_LOG_LEVEL:DEBUG}
 
 spring:
@@ -54,7 +50,10 @@ spring:
 
 app:
   telegram:
-    token: ${TELEGRAM_TOKEN:token}
+    customer:
+      token: ${CUSTOMER_TELEGRAM_BOT_TOKEN:token}
+    producer:
+      token: ${PRODUCER_TELEGRAM_BOT_TOKEN:token}
   client: REST
   bid:
     cache:

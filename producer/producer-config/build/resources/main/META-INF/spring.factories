@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  ru.udisondev.globus.producer.config.ProducerCacheConfig,\
-  ru.udisondev.globus.producer.config.ProducerConfig

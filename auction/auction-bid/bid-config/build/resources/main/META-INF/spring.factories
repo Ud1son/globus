@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  ru.udisondev.globus.auction.bid.config.BidCacheConfig,\
-  ru.udisondev.globus.auction.bid.config.BidConfig

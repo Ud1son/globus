@@ -3,6 +3,7 @@ package ru.udisondev.globus.auction.lot.service.model;
 import ru.udisondev.globus.persistence.enums.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -12,9 +13,9 @@ public interface LotDataProvider {
 
     UUID getCustomerId();
 
-    OffsetDateTime getDeliveryFrom();
+    LocalDate getDeliveryDate();
 
-    OffsetDateTime getDeliveryTo();
+    LocalDate getArriveDate();
 
     String getDeliveryAddress();
 

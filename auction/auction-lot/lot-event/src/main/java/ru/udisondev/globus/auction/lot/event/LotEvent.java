@@ -6,6 +6,7 @@ import ru.udisondev.globus.persistence.enums.*;
 
 import javax.annotation.Nullable;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -19,8 +20,8 @@ public class LotEvent {
     UUID customerId;
     @Nullable
     UUID confirmedBidId;
-    OffsetDateTime deliveryFrom;
-    OffsetDateTime deliveryTo;
+    LocalDate deliveryDate;
+    LocalDate arriveDate;
     String deliveryAddress;
     String arriveAddress;
     String title;

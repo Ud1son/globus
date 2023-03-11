@@ -2,7 +2,6 @@ package ru.udisondev.globus.producer.api;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import ru.udisondev.globus.organization.api.OrganizationClient;
 import ru.udisondev.globus.producer.service.ProducerDataProvider.DefaultProducerDataProvider;
 import ru.udisondev.globus.producer.service.ProducerService;
 import ru.udisondev.globus.user.api.UserClient;
@@ -17,16 +16,13 @@ public class ApplicationProducerClient implements ProducerClient {
 
     private final ProducerService producerService;
     private final ProducerApiMapper mapper;
-    private final OrganizationClient organizationClient;
     private final UserClient userClient;
 
     public ApplicationProducerClient(ProducerService producerService,
                                      ProducerApiMapper mapper,
-                                     OrganizationClient organizationClient,
                                      UserClient userClient) {
         this.producerService = producerService;
         this.mapper = mapper;
-        this.organizationClient = organizationClient;
         this.userClient = userClient;
     }
 
@@ -34,7 +30,6 @@ public class ApplicationProducerClient implements ProducerClient {
     public ProducerDto create(CreateProducerRequest request) {
         return mapper.toDto(producerService.create(
                 DefaultProducerDataProvider.builder()
-                        .organizationId(organizationClient.addOrganization(request.getOrganizationInn()).getId())
                         .userId(userClient.create(request.getUserData()).getId())
                 .build()));
     }
