@@ -7,6 +7,7 @@ import ru.udisondev.globus.persistence.enums.*;
 import javax.annotation.Nullable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -15,6 +16,8 @@ import java.util.UUID;
 public class LotEvent {
 
     UUID id;
+
+    Long lotOrder;
     LotState state;
     UUID claimId;
     UUID customerId;
@@ -38,4 +41,6 @@ public class LotEvent {
     Short amount;
     BigDecimal budget;
     BillingType billingType;
+
+    LocalDateTime creationDateTime;
 }

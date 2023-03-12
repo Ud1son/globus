@@ -12,7 +12,7 @@ public class LotNotFoundException extends RuntimeException {
         return new LotNotFoundException("Lot with id: %s not found!".formatted(id));
     }
 
-    public static LotNotFoundException byClaimId(String claimId) {
+    public static LotNotFoundException byClaimId(UUID claimId) {
         return new LotNotFoundException("Lot with claimId: %s not found!".formatted(claimId));
     }
 }

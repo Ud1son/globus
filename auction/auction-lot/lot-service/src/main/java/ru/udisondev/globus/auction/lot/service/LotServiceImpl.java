@@ -59,7 +59,7 @@ public class LotServiceImpl implements LotService {
 
     @Override
     @Transactional
-    public void cancel(String claimId) {
+    public void cancel(UUID claimId) {
         var lot = lotRepository.findByClaimIdForUpdate(claimId).orElseThrow(() -> LotNotFoundException.byClaimId(claimId));
         if (lot.getState() != OPENED) {
             return;

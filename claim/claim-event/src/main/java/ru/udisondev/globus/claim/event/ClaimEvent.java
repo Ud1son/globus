@@ -14,7 +14,7 @@ import java.util.UUID;
 @Builder
 public class ClaimEvent {
 
-    String claimId;
+    UUID claimId;
     UUID customerId;
     LocalDate deliveryDate;
     LocalDate arriveDate;

@@ -3,6 +3,7 @@ package ru.udisondev.globus.user.api;
 import ru.udisondev.globus.user.model.CreateUserRequest;
 import ru.udisondev.globus.user.model.UserDto;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface UserClient {
@@ -10,4 +11,6 @@ public interface UserClient {
     UserDto create(CreateUserRequest request);
 
     UserDto findById(UUID id);
+
+    List<UserDto> findAllProducers();
 }

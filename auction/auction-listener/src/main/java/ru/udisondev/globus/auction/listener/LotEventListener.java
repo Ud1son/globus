@@ -1,33 +1,32 @@
 package ru.udisondev.globus.auction.listener;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 import ru.udisondev.globus.auction.event.PrivateAuctionEvent;
 import ru.udisondev.globus.auction.lot.event.LotEvent;
 import ru.udisondev.globus.auction.publisher.AuctionEventPublisher;
-import ru.udisondev.globus.producer.api.ProducerClient;
+import ru.udisondev.globus.user.api.UserClient;
 
 import static ru.udisondev.globus.persistence.enums.AuctionState.LOT_OPENED;
 
 @Component("auctionLotEventListener")
 public class LotEventListener {
 
-    private final ProducerClient producerClient;
+    private final UserClient userClient;
     private final AuctionEventPublisher auctionEventPublisher;
     private final AuctionLotMapper mapper;
 
-    public LotEventListener(@Qualifier("applicationProducerClient") ProducerClient producerClient, AuctionEventPublisher auctionEventPublisher, AuctionLotMapper mapper) {
-        this.producerClient = producerClient;
+    public LotEventListener(UserClient userClient, AuctionEventPublisher auctionEventPublisher, AuctionLotMapper mapper) {
+        this.userClient = userClient;
         this.auctionEventPublisher = auctionEventPublisher;
         this.mapper = mapper;
     }
 
     @EventListener(condition = "#event.state.name() == 'OPENED'")
     public void opened(LotEvent event) {
-        producerClient.findAll().stream()
+        userClient.findAllProducers().stream()
                 .map(producer -> PrivateAuctionEvent.builder()
-                        .eventReceiver(producer.getUserId())
+                        .eventReceiver(producer.getId())
                         .lotInfo(mapper.map(event))
                         .eventType(LOT_OPENED)
                         .build())

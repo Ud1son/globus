@@ -22,7 +22,7 @@ public interface ClaimServiceMapper {
     Claim toEntity(ClaimDataProvider dataProvider);
 
     @Mappings({
-            @Mapping(target = "claimId", expression = "java(claim.getId().toString())"),
+            @Mapping(target = "claimId", source = "id"),
             @Mapping(target = "deliveryDate", source = "delivery.deliveryDate"),
             @Mapping(target = "arriveDate", source = "delivery.arriveDate"),
             @Mapping(target = "deliveryAddress", source = "delivery.deliveryAddress"),

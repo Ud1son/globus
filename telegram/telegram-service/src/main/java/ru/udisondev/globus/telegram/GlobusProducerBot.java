@@ -43,7 +43,7 @@ public class GlobusProducerBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "globusdelivery_prod_bot";
+        return "globusdelivery_producer_bot";
     }
 
     private void handleMessage(Message m) {

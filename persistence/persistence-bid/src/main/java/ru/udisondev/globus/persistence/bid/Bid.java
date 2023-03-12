@@ -43,6 +43,7 @@ public class Bid {
     private BigDecimal bidPrice;
 
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private BidState state;
 
     @CreationTimestamp

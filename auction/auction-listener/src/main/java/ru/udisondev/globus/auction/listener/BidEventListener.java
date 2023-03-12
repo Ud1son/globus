@@ -3,26 +3,26 @@ package ru.udisondev.globus.auction.listener;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 import ru.udisondev.globus.auction.bid.event.BidEvent;
-import ru.udisondev.globus.auction.lot.service.LotService;
+import ru.udisondev.globus.auction.lot.api.LotClient;
 import ru.udisondev.globus.auction.publisher.AuctionEventPublisher;
 import ru.udisondev.globus.persistence.enums.AuctionState;
 
 @Component("auctionBidEventListener")
 public class BidEventListener {
 
-    private final LotService lotService;
+    private final LotClient lotClient;
     private final AuctionEventMapper mapper;
     private final AuctionEventPublisher eventPublisher;
 
-    public BidEventListener(LotService lotService, AuctionEventMapper mapper, AuctionEventPublisher eventPublisher) {
-        this.lotService = lotService;
+    public BidEventListener(LotClient lotClient, AuctionEventMapper mapper, AuctionEventPublisher eventPublisher) {
+        this.lotClient = lotClient;
         this.mapper = mapper;
         this.eventPublisher = eventPublisher;
     }
 
     @EventListener(condition = "#event.state.name() == 'REQUESTED'")
     public void requested(BidEvent event) {
-        var lot = lotService.findLotById(event.getLotId());
+        var lot = lotClient.findById(event.getLotId());
         eventPublisher.publishPrivate(
                 mapper.toPrivateEvent(
                         lot.getCustomerId(),
@@ -37,7 +37,7 @@ public class BidEventListener {
                 mapper.toPrivateEvent(
                         event.getProducerId(),
                         event,
-                        lotService.findLotById(event.getLotId()),
+                        lotClient.findById(event.getLotId()),
                         AuctionState.BID_APPROVED));
     }
 
@@ -47,13 +47,13 @@ public class BidEventListener {
                 mapper.toPrivateEvent(
                         event.getProducerId(),
                         event,
-                        lotService.findLotById(event.getLotId()),
+                        lotClient.findById(event.getLotId()),
                         AuctionState.BID_REJECTED));
     }
 
     @EventListener(condition = "#event.state.name() == 'CONFIRNED'")
     public void confirmed(BidEvent event) {
-        var lot = lotService.findLotById(event.getLotId());
+        var lot = lotClient.findById(event.getLotId());
         eventPublisher.publishPrivate(
                 mapper.toPrivateEvent(
                         lot.getCustomerId(),
@@ -68,13 +68,13 @@ public class BidEventListener {
                 mapper.toPrivateEvent(
                         event.getProducerId(),
                         event,
-                        lotService.findLotById(event.getLotId()),
+                        lotClient.findById(event.getLotId()),
                         AuctionState.BID_CLOSED));
     }
 
     @EventListener(condition = "#event.state.name() == 'CANCELLED'")
     public void cancelled(BidEvent event) {
-        var lot = lotService.findLotById(event.getLotId());
+        var lot = lotClient.findById(event.getLotId());
         eventPublisher.publishPrivate(
                 mapper.toPrivateEvent(
                         lot.getCustomerId(),

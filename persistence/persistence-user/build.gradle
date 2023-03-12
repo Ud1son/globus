@@ -6,6 +6,7 @@ group 'ru.udisondev.globus'
 
 dependencies {
     api project(":persistence:persistence-enum")
+    api project(":persistence:persistence-organization")
 }
 
 test {

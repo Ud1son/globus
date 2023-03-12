@@ -6,10 +6,10 @@ group 'ru.udisondev.globus'
 
 dependencies {
     implementation project(":auction:auction-lot:lot-event")
-    implementation project(":auction:auction-lot:lot-service")
+    implementation project(":auction:auction-lot:lot-api")
+    implementation project(":user:user-api")
     implementation project(":auction:auction-bid:bid-event")
     implementation project(":auction:auction-bid:bid-service")
-    implementation project(":producer:producer-api")
     implementation project(":auction:auction-publisher")
     implementation project(":exception")
 }

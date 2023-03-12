@@ -6,7 +6,9 @@ import ru.udisondev.globus.user.model.CreateUserRequest;
 import ru.udisondev.globus.user.model.UserDto;
 import ru.udisondev.globus.user.service.UserService;
 
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 @ConditionalOnMissingBean(UserClient.class)
@@ -28,5 +30,13 @@ public class ApplicationUserClientImpl implements UserClient {
     @Override
     public UserDto findById(UUID id) {
         return mapper.toDto(userService.findById(id));
+    }
+
+    @Override
+    public List<UserDto> findAllProducers() {
+        return userService.findAllProducers().stream()
+                .parallel()
+                .map(mapper::toDto)
+                .collect(Collectors.toList());
     }
 }

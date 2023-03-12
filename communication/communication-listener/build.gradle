@@ -7,7 +7,6 @@ group 'ru.udisondev.globus'
 dependencies {
     implementation project(":auction:auction-event")
     implementation project(":user:user-api")
-    implementation project(":producer:producer-api")
 }
 
 test {

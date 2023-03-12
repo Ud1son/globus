@@ -15,6 +15,7 @@ public interface LotMapper {
 
     @Mappings({
             @Mapping(target = "id", ignore = true),
+            @Mapping(target = "lotOrder", ignore = true),
             @Mapping(target = "creationDateTime", ignore = true),
             @Mapping(target = "lastUpdateDateTime", ignore = true),
             @Mapping(target = "confirmedBidId", ignore = true),

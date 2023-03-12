@@ -9,11 +9,15 @@ import org.hibernate.Hibernate;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.annotations.UuidGenerator;
+import ru.udisondev.globus.persistence.enums.UserRole;
 import ru.udisondev.globus.persistence.enums.UserState;
+import ru.udisondev.globus.persistence.organization.Organization;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
 import java.util.UUID;
+
+import static jakarta.persistence.EnumType.STRING;
 
 @Getter
 @Setter
@@ -28,6 +32,14 @@ public class User {
     @UuidGenerator
     private UUID id;
 
+    @Column(nullable = false, updatable = false)
+    @Enumerated(STRING)
+    private UserRole role;
+
+    @ManyToOne
+    @JoinColumn(name = "organization_id")
+    private Organization organization;
+
     @Embedded
     @Column(nullable = false)
     private Profile profile;
@@ -35,7 +47,7 @@ public class User {
     @Embedded
     private Subscribe subscribe;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(STRING)
     @Column(nullable = false)
     private UserState state;
 

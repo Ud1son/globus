@@ -12,6 +12,7 @@ public interface CommandMapper {
             @Mapping(target = "type", source = "command"),
             @Mapping(target = "text", source = "m.text"),
             @Mapping(target = "chatId", source = "m.chat.id"),
+            @Mapping(target = "telegramUserId", source = "m.from.id")
     })
     UserCommand map(Message m, Command command);
 }

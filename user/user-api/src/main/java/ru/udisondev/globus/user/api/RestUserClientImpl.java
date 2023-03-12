@@ -6,7 +6,9 @@ import ru.udisondev.globus.user.model.CreateUserRequest;
 import ru.udisondev.globus.user.model.UserDto;
 import ru.udisondev.globus.user.service.UserService;
 
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/user")
@@ -31,5 +33,14 @@ public class RestUserClientImpl implements UserClient {
     @GetMapping("/{id}")
     public UserDto findById(@PathVariable("id") UUID id) {
         return mapper.toDto(userService.findById(id));
+    }
+
+    @Override
+    @GetMapping("/producer")
+    public List<UserDto> findAllProducers() {
+        return userService.findAllProducers().stream()
+                .parallel()
+                .map(mapper::toDto)
+                .collect(Collectors.toList());
     }
 }

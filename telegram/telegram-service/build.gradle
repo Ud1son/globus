@@ -13,6 +13,8 @@ dependencies {
     implementation 'org.telegram:telegrambots:6.4.0'
     implementation project(':persistence:persistence-telegram-user')
     implementation project(':auction:auction-bid:bid-api')
+    implementation project(':auction:auction-lot:lot-api')
+    implementation project(':user:user-api')
     implementation project(':auction:auction-event')
     implementation project(':common:util')
     implementation project(':exception')

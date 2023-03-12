@@ -7,10 +7,8 @@ group 'ru.udisondev.globus'
 dependencies {
     api project(":persistence:persistence-bid")
     api project(":persistence:persistence-claim")
-    api project(":persistence:persistence-customer")
     api project(":persistence:persistence-enum")
     api project(":persistence:persistence-lot")
-    api project(":persistence:persistence-producer")
     api project(":persistence:persistence-user")
 }
 

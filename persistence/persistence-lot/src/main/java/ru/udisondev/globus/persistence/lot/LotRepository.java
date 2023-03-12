@@ -12,7 +12,7 @@ public interface LotRepository extends JpaRepository<Lot, UUID> {
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("select l from Lot l where l.claimId = ?1")
-    Optional<Lot> findByClaimIdForUpdate(String claimId);
+    Optional<Lot> findByClaimIdForUpdate(UUID claimId);
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("select l from Lot l where l.id = ?1")

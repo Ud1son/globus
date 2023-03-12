@@ -51,7 +51,7 @@ spring:
 app:
   telegram:
     customer:
-      token: ${CUSTOMER_TELEGRAM_BOT_TOKEN:token}
+      token: ${CUSTOMER_BOT_API_TOKEN:token}
     producer:
       token: ${PRODUCER_TELEGRAM_BOT_TOKEN:token}
   client: REST
@@ -62,18 +62,6 @@ app:
       initCapacity: 10
       maxSize: 1000
   lot:
-    cache:
-      expireAfterAccessSec: 300
-      expireAfterWriteSec: 900
-      initCapacity: 10
-      maxSize: 1000
-  producer:
-    cache:
-      expireAfterAccessSec: 300
-      expireAfterWriteSec: 900
-      initCapacity: 10
-      maxSize: 1000
-  customer:
     cache:
       expireAfterAccessSec: 300
       expireAfterWriteSec: 900

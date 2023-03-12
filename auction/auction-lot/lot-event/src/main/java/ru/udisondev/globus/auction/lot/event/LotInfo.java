@@ -14,8 +14,10 @@ import java.util.UUID;
 public class LotInfo {
 
     UUID id;
+
+    Long lotOrder;
     LotState state;
-    String claimId;
+    UUID claimId;
     UUID customerId;
     @Nullable
     UUID producerId;

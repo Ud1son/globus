@@ -11,7 +11,7 @@ public interface LotService {
 
     void complete(UUID lotId, UUID confirmedBidId);
 
-    void cancel(String claimId);
+    void cancel(UUID claimId);
 
     LotInfo findLotById(UUID lotId);
 }

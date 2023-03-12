@@ -30,11 +30,17 @@ public class Lot {
     @UuidGenerator
     private UUID id;
 
+    @Column(columnDefinition = "serial",
+            insertable = false,
+            updatable = false,
+            unique = true)
+    private Long lotOrder;
+
     @Enumerated(EnumType.STRING)
     private LotState state;
 
     @Column(nullable = false, unique = true, updatable = false)
-    private String claimId;
+    private UUID claimId;
 
     @Column(nullable = false, updatable = false)
     private UUID customerId;

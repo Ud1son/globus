@@ -18,31 +18,27 @@ import java.util.List;
 import static java.util.Objects.nonNull;
 
 @Component
-public class LotCreatedEventListener {
-
-    private final GlobusProducerBot producerBot;
-    private final TelegramUserRepository repository;
+public class LotCreatedEventListener extends CoreEventListener {
 
     public LotCreatedEventListener(GlobusProducerBot producerBot, TelegramUserRepository repository) {
-        this.producerBot = producerBot;
-        this.repository = repository;
+        super(producerBot, repository);
     }
 
     @EventListener(condition = "#event.eventType.name() == 'LOT_OPENED'")
-    public void handle(PrivateAuctionEvent event) {
+    public void handleForProducer(PrivateAuctionEvent event) {
         var hasBillingInfo = nonNull(event.getLotInfo().getBudget());
         var telegramUser = repository.findTelegramUserByUserId(event.getEventReceiver())
                 .orElseThrow(() -> TelegramUserNotFoundException.byUserId(event.getEventReceiver()));
         // создаем кнопки для управления заявкой
-        var lotId = event.getLotInfo().getId().toString();
+        var lotOrder = event.getLotInfo().getLotOrder();
 
         InlineKeyboardButton acceptOrderButton = new InlineKeyboardButton();
         acceptOrderButton.setText("Принять заявку");
-        acceptOrderButton.setCallbackData("accept_claim" + lotId);
+        acceptOrderButton.setCallbackData("accept_claim " + lotOrder);
 
         InlineKeyboardButton suggestPriceButton = new InlineKeyboardButton();
         suggestPriceButton.setText("Предложить свою цену");
-        suggestPriceButton.setCallbackData("suggest_price" + lotId);
+        suggestPriceButton.setCallbackData("suggest_price" + lotOrder);
 
         // создаем разметку клавиатуры
         InlineKeyboardMarkup keyboardMarkup = new InlineKeyboardMarkup();
@@ -98,6 +94,37 @@ public class LotCreatedEventListener {
         } catch (TelegramApiException e) {
             throw new RuntimeException(e);
         }
+    }
 
+    @EventListener(condition = "#event.eventType.name() == 'LOT_OPENED'")
+    public void handleForCustomer(PrivateAuctionEvent event) {
+        var customer = repository.findTelegramUserByUserId(event.getLotInfo().getCustomerId()).orElseThrow();
+        // создаем кнопки для управления заявкой
+        var lotOrder = event.getLotInfo().getLotOrder();
+
+        var text = """
+                Ваша заявка успешно создана! Мы начали поиск подходящего перевозчика. 
+                Следите за обновлениями и уведомлениями от нашего чат-бота.
+                
+                Вы также можете отменить заявку нажав на кнопку "Отменить завку" ниже.
+                """;
+
+        // создаем объект SendMessage для отправки сообщения
+        SendMessage message = new SendMessage();
+        message.setChatId(customer.getChatId());
+        message.setText(text);
+        message.setReplyMarkup(addButtons(
+                List.of(createButton(
+                        b -> b.setText("Отменить заявку"),
+                        b -> b.setCallbackData("cancel_claim " + lotOrder)
+                ))
+        ));
+
+        // отправляем сообщение
+        try {
+            producerBot.execute(message);
+        } catch (TelegramApiException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

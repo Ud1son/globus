@@ -8,6 +8,7 @@ import ru.udisondev.globus.persistence.enums.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -16,9 +17,11 @@ import java.util.UUID;
 public class LotInfo {
 
     UUID id;
+
+    Long lotOrder;
     @Builder.Default
     LotState state = LotState.OPENED;
-    String claimId;
+    UUID claimId;
     UUID customerId;
     UUID confirmedBidId;
     LocalDate deliveryDate;
@@ -39,4 +42,5 @@ public class LotInfo {
     Short amount;
     BigDecimal budget;
     BillingType billingType;
+    LocalDateTime creationDateTime;
 }

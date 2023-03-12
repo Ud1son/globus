@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public interface LotDataProvider {
 
-    String getClaimId();
+    UUID getClaimId();
 
     UUID getCustomerId();
 

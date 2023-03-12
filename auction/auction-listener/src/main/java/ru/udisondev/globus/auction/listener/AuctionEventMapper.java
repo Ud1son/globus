@@ -6,7 +6,7 @@ import org.mapstruct.Mappings;
 import ru.udisondev.globus.auction.bid.event.BidEvent;
 import ru.udisondev.globus.auction.event.AuctionEvent;
 import ru.udisondev.globus.auction.event.PrivateAuctionEvent;
-import ru.udisondev.globus.auction.lot.service.model.LotInfo;
+import ru.udisondev.globus.auction.lot.api.LotDto;
 import ru.udisondev.globus.persistence.enums.AuctionState;
 
 import java.util.UUID;
@@ -18,14 +18,14 @@ public interface AuctionEventMapper {
             @Mapping(target = "lotInfo.", source = "lot"),
             @Mapping(target = "bidInfo.", source = "event")
     })
-    AuctionEvent toEvent(BidEvent event, LotInfo lot, AuctionState eventType);
+    AuctionEvent toEvent(BidEvent event, LotDto lot, AuctionState eventType);
 
     @Mappings({
             @Mapping(target = "eventReceiver", source = "eventReceiver"),
             @Mapping(target = "lotInfo.", source = "lot"),
             @Mapping(target = "bidInfo.", source = "event")
     })
-    PrivateAuctionEvent toPrivateEvent(UUID eventReceiver, BidEvent event, LotInfo lot, AuctionState eventType);
+    PrivateAuctionEvent toPrivateEvent(UUID eventReceiver, BidEvent event, LotDto lot, AuctionState eventType);
 
 
 }

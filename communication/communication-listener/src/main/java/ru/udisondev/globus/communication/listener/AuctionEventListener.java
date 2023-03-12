@@ -1,21 +1,17 @@
 package ru.udisondev.globus.communication.listener;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 import ru.udisondev.globus.auction.event.PrivateAuctionEvent;
-import ru.udisondev.globus.producer.api.ProducerClient;
 import ru.udisondev.globus.user.api.UserClient;
 
 @Component
 public class AuctionEventListener {
 
     private final UserClient userClient;
-    private final ProducerClient producerClient;
 
-    public AuctionEventListener(UserClient userClient, @Qualifier("applicationProducerClient") ProducerClient producerClient) {
+    public AuctionEventListener(UserClient userClient) {
         this.userClient = userClient;
-        this.producerClient = producerClient;
     }
 
     @EventListener(condition = "#event.eventType.name() == 'LOT_OPENED'")
@@ -93,7 +89,7 @@ public class AuctionEventListener {
     @EventListener(condition = "#event.eventType.name() == 'BID_CONFIRMED'")
     public void bidConfirmed(PrivateAuctionEvent event) {
         var user = userClient.findById(event.getEventReceiver()).getProfile();
-        var producerProfile = userClient.findById(producerClient.findById(event.getBidInfo().getProducerId()).getUserId()).getProfile();
+        var producerProfile = userClient.findById(userClient.findById(event.getBidInfo().getProducerId()).getId()).getProfile();
 
         System.out.printf("""
                Dear, %s %s, ?
